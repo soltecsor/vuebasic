@@ -7,7 +7,7 @@
 <script>
 import MainTemplate from '../views/MainTemplateView'
 
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
   components:{
         MainTemplate
@@ -22,6 +22,10 @@ export default {
     ...mapState('home',['titulo'])
   },
   mounted(){
+    this.startHome()
+  },
+  methods:{
+    ...mapActions('home',['startHome'])
   }
 }
 </script>
